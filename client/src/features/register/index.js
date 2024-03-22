@@ -1,21 +1,34 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import Logo from '../../components/Elements/Logo';
 import Input from '../../components/Elements/Input';
 import CommonButton from '../../components/Elements/Button';
+
 
 const Register = () => {
   return (
     <Wrapper>
       <Logo fontSize="40px" />
       <InputWrapper>
-        <Input placeholder="name" />
-        <Input placeholder="email" />
-        <Input placeholder="password" />
-        <Input />
+        <form action= 'http://localhost:8080/auth/register' method="POST">
+          <label for="name" />
+          <Input type="text" placeholder="name" name="name" />
+          <label for="email" />
+          <Input type="email" placeholder="email" name="email" />
+          <label for="password" />
+          <Input type="password" placeholder="password" name="password" />
+          <label for="passwordConfirm" />
+          <Input type="password" name="passwordConfirm" />
+          <Button
+          type="submit"
+          title="회원가입"
+          height="50px"
+          width="400px"
+          fontSize="18px"
+        />
+        <A href="/">취소</A>
+        </form>
+        
       </InputWrapper>
-      <Button title="회원가입" height="50px" width="400px" fontSize="18px" />
-      <A href="/">취소</A>
     </Wrapper>
   );
 };
@@ -48,7 +61,5 @@ const A = styled.a`
   text-decoration: none;
   color: #535151;
   font-size: 15px;
-`;
-const Check = styled.input`
-  margin: 2px 5px 0 0;
+  text-align: center;
 `;

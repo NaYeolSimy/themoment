@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 import magnifierURL from '../../assets/magnifier.svg';
 
-const Input = ({ type, placeholder, lastChild, height, width, fontSize }) => {
+const Input = ({
+  type,
+  placeholder,
+  lastChild,
+  height,
+  width,
+  fontSize,
+  name,
+}) => {
   let placeholderText;
 
   switch (placeholder) {
@@ -33,6 +41,7 @@ const Input = ({ type, placeholder, lastChild, height, width, fontSize }) => {
       height={height}
       width={width}
       fontSize={fontSize}
+      name={name}
     />
   );
 };

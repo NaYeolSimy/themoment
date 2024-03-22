@@ -16,6 +16,7 @@ const CommonButton = styled.button`
 `;
 
 const Button = ({
+  type,
   className,
   title,
   backgroundColor,
@@ -28,7 +29,7 @@ const Button = ({
 }) => {
   return (
     <CommonButton
-      type="button"
+      type={type}
       className={className}
       backgroundColor={backgroundColor}
       color={color}
